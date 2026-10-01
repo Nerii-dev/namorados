@@ -38,7 +38,7 @@ export default function MusicPlayer({ music }) {
     }
   }, [volume]);
 
-  const playLocalAudio = useCallback(async () => {
+  const playLocalAudio = useCallback(async ({ reveal = true } = {}) => {
     const audio = audioRef.current;
 
     if (usesDeezer) {
@@ -51,15 +51,15 @@ export default function MusicPlayer({ music }) {
     try {
       await audio.play();
       setIsPlaying(true);
-      setIsOpen(true);
+      if (reveal) setIsOpen(true);
     } catch {
       setIsOpen(true);
     }
   }, [audioUrl, usesDeezer]);
 
   useEffect(() => {
-    const handleHeroPlay = () => {
-      playLocalAudio();
+    const handleHeroPlay = (event) => {
+      playLocalAudio({ reveal: event.detail?.reveal ?? true });
     };
 
     window.addEventListener('neriegica:play-music', handleHeroPlay);

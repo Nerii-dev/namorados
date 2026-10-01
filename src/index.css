@@ -43,3 +43,174 @@ button:disabled {
   color: #7c3f3f;
   background: #f4c8c1;
 }
+
+/* ---------- Abertura de aniversário (Ghibli) ---------- */
+
+.font-hand {
+  font-family: "Caveat", "Segoe Script", cursive;
+}
+
+.font-storybook {
+  font-family: "Cormorant Garamond", Georgia, serif;
+}
+
+.ghibli-cloud {
+  position: absolute;
+  animation: cloud-drift var(--dur, 90s) linear infinite;
+  animation-delay: var(--delay, 0s);
+  will-change: transform;
+}
+
+@keyframes cloud-drift {
+  from { transform: translateX(-40vw); }
+  to { transform: translateX(140vw); }
+}
+
+.soot {
+  position: absolute;
+  display: block;
+  width: var(--s, 34px);
+  height: calc(var(--s, 34px) * 1.25);
+  transform-origin: 50% 100%;
+  animation: soot-hop var(--dur, 2.6s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+.soot-walker {
+  position: absolute;
+  bottom: 1.5%;
+  left: 0;
+  width: 90px;
+  height: 56px;
+  animation: soot-walk var(--dur, 30s) linear infinite;
+}
+
+.soot-walker .soot {
+  bottom: 0;
+}
+
+@keyframes soot-walk {
+  from { transform: translateX(-120px); }
+  to { transform: translateX(calc(100vw + 40px)); }
+}
+
+.twinkle-star {
+  position: absolute;
+  border-radius: 50%;
+  background: #fffbe8;
+  box-shadow: 0 0 6px 1px rgba(255, 251, 232, 0.7);
+  animation: star-twinkle 3.2s ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+@keyframes star-twinkle {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 1; }
+}
+
+.shooting-star {
+  position: absolute;
+  width: 140px;
+  height: 2px;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #fffbe8, rgba(255, 250, 220, 0));
+  opacity: 0;
+  transform: rotate(-28deg);
+  animation: shooting-star 9s ease-in infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+@keyframes shooting-star {
+  0% { opacity: 0; transform: rotate(-28deg) translateX(0); }
+  2% { opacity: 1; }
+  9% { opacity: 0; transform: rotate(-28deg) translateX(-320px); }
+  100% { opacity: 0; transform: rotate(-28deg) translateX(-320px); }
+}
+
+@keyframes soot-hop {
+  0%, 100% { transform: translateY(0) scale(1, 1); }
+  40% { transform: translateY(-22px) scale(0.95, 1.06); }
+  55% { transform: translateY(-24px) scale(1, 1); }
+  85% { transform: translateY(0) scale(1.12, 0.88); }
+}
+
+.firefly {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #fff6b0;
+  box-shadow: 0 0 10px 4px rgba(255, 238, 130, 0.75);
+  animation:
+    firefly-float var(--dur, 7s) ease-in-out infinite,
+    firefly-glow 2.4s ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+@keyframes firefly-float {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(18px, -26px); }
+  50% { transform: translate(-12px, -48px); }
+  75% { transform: translate(-24px, -18px); }
+}
+
+@keyframes firefly-glow {
+  0%, 100% { opacity: 0.25; }
+  50% { opacity: 1; }
+}
+
+.falling-leaf {
+  position: absolute;
+  top: -5%;
+  width: 14px;
+  height: 9px;
+  border-radius: 0 100% 0 100%;
+  background: var(--c, #f4a7a0);
+  animation: leaf-fall var(--dur, 12s) linear infinite;
+  animation-delay: var(--delay, 0s);
+  opacity: 0.9;
+}
+
+@keyframes leaf-fall {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(40px, 28vh) rotate(120deg); }
+  50% { transform: translate(-20px, 56vh) rotate(220deg); }
+  75% { transform: translate(30px, 82vh) rotate(320deg); }
+  100% { transform: translate(-10px, 112vh) rotate(420deg); }
+}
+
+.paper-texture {
+  background-color: #fdf6e7;
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(214, 183, 140, 0.18), transparent 38%),
+    radial-gradient(circle at 88% 86%, rgba(214, 183, 140, 0.22), transparent 40%),
+    repeating-linear-gradient(0deg, transparent 0 2.15rem, rgba(140, 170, 200, 0.22) 2.15rem calc(2.15rem + 1px));
+  background-position: 0 0, 0 0, 0 -0.35rem;
+}
+
+.type-caret {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  margin-left: 2px;
+  vertical-align: -0.15em;
+  background: #7c3f3f;
+  animation: caret-blink 0.9s steps(1) infinite;
+}
+
+@keyframes caret-blink {
+  50% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ghibli-cloud,
+  .soot,
+  .firefly,
+  .falling-leaf,
+  .soot-walker,
+  .twinkle-star,
+  .shooting-star,
+  .type-caret {
+    animation: none;
+  }
+}
