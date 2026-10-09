@@ -118,6 +118,92 @@ export const siteData = {
     ],
   },
 
+  // Página do pedido de namoro: /pedido
+  proposal: {
+    intro: {
+      eyebrow: 'Para Gica, com todo o meu coração',
+      title: 'Gica, posso te contar uma história?',
+      subtitle: 'É curtinha. Mas é a minha favorita.',
+      startLabel: 'Pode contar',
+    },
+
+    chapters: [
+      {
+        label: 'Capítulo I',
+        title: 'O começo',
+        image: 'images/foto-01.jpeg',
+        text: 'Em 08 de novembro de 2025 começou a nossa história. Eu ainda não sabia, mas ali eu tinha encontrado o meu lugar favorito no mundo.',
+      },
+      {
+        label: 'Capítulo II',
+        title: 'Os dias de sol',
+        image: 'images/foto-06.jpeg',
+        text: 'Depois veio a praia, o sol, a areia no pé. E eu descobri que qualquer lugar fica mais bonito quando você está do meu lado.',
+      },
+      {
+        label: 'Capítulo III',
+        title: 'As aventuras',
+        image: 'images/foto-12.jpeg',
+        text: 'Com você, até viagem de ônibus vira aventura. As caretas, as risadas, os planos... tudo fica melhor quando é com você.',
+      },
+      {
+        label: 'Capítulo IV',
+        title: 'O que vem agora',
+        image: 'images/foto-13.jpeg',
+        text: 'Toda história bonita tem um momento em que o personagem cria coragem. Esse é o meu.',
+      },
+    ],
+
+    stars: {
+      title: 'As fuligens guardaram umas estrelinhas pra você',
+      hint: 'Toque em cada konpeito',
+      reasons: [
+        'Porque o seu sorriso deixa qualquer dia mais leve.',
+        'Porque com você eu sou eu mesmo, com careta e tudo.',
+        'Porque o jeito que você cuida de mim é a coisa mais bonita que eu conheço.',
+        'Porque do seu lado eu me sinto em casa.',
+        'Porque eu quero viver todos os próximos capítulos com você.',
+      ],
+      doneLabel: 'Tem mais uma coisa...',
+    },
+
+    question: {
+      text: 'Gica, você aceita namorar comigo, oficialmente?',
+      yesLabel: 'Sim!',
+      noLabels: [
+        'Não',
+        'Tem certeza?',
+        'Pensa bem...',
+        'As fuligens vão chorar',
+        'Esse botão tá com defeito',
+        'Última chance...',
+      ],
+      noGivesUpLabel: 'Tá bom, sim',
+    },
+
+    celebration: {
+      title: 'Agora é oficial!',
+      subtitle: 'Eu te amo, minha namorada.',
+      sinceLabel: 'Namorados oficialmente desde',
+      certificateLabel: 'Assinar nosso certificado',
+    },
+
+    certificate: {
+      title: 'Certificado de Namoro Oficial',
+      body: 'Por livre e espontânea vontade (e depois de fugir do botão "não"), {nameTwo} e {nameOne} declaram, sob o céu estrelado e diante das fuligens como testemunhas, que estão oficialmente namorando.',
+      promise: 'Prometem cuidar um do outro, dividir o último pedaço, rir das caretas e viver juntos todos os próximos capítulos.',
+      signatureOne: 'Enrique',
+      signHint: 'Assine aqui com o dedo',
+      clearLabel: 'Apagar',
+      confirmLabel: 'Assinar',
+      downloadLabel: 'Baixar certificado',
+      whatsappLabel: 'Mandar minha resposta',
+      // Número com DDI e DDD, só dígitos (ex.: 5511999999999). Vazio = ela escolhe o contato.
+      whatsappNumber: '',
+      whatsappMessage: 'SIM! Eu aceito namorar com você oficialmente ❤',
+    },
+  },
+
   music: {
     title: 'Nossa música',
     artist: 'Neri e Gica',

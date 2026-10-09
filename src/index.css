@@ -214,3 +214,57 @@ button:disabled {
     animation: none;
   }
 }
+
+/* ---------- Pedido de namoro ---------- */
+
+.parchment {
+  background-color: #fbf3e2;
+  background-image:
+    radial-gradient(circle at 10% 12%, rgba(214, 183, 140, 0.28), transparent 42%),
+    radial-gradient(circle at 92% 90%, rgba(214, 183, 140, 0.32), transparent 45%),
+    radial-gradient(circle at 70% 20%, rgba(255, 255, 255, 0.6), transparent 35%);
+}
+
+.scene-celebrate .soot {
+  animation-duration: 0.6s !important;
+}
+
+.konpeito-star {
+  filter: drop-shadow(0 0 6px rgba(255, 245, 210, 0.95)) drop-shadow(0 0 16px rgba(255, 220, 150, 0.6));
+  animation: konpeito-glow 2.6s ease-in-out infinite;
+}
+
+@keyframes konpeito-glow {
+  0%, 100% { opacity: 0.85; }
+  50% { opacity: 1; }
+}
+
+.lantern {
+  position: absolute;
+  bottom: -70px;
+  width: var(--s, 24px);
+  height: calc(var(--s, 24px) * 1.35);
+  border-radius: 42% 42% 30% 30% / 46% 46% 24% 24%;
+  background: radial-gradient(ellipse at 50% 62%, #fff6cf 0%, #ffcf73 38%, #f2903f 78%, #c9622c 100%);
+  box-shadow:
+    0 0 14px 4px rgba(255, 190, 100, 0.55),
+    0 0 40px 10px rgba(255, 150, 70, 0.25);
+  opacity: 0;
+  animation: lantern-rise var(--dur, 18s) linear infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+@keyframes lantern-rise {
+  0% { transform: translate(0, 0); opacity: 0; }
+  6% { opacity: 1; }
+  50% { transform: translate(var(--sway, 30px), -60svh); }
+  88% { opacity: 0.9; }
+  100% { transform: translate(0, -125svh); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .konpeito-star,
+  .lantern {
+    animation: none;
+  }
+}
