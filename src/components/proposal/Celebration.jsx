@@ -24,7 +24,28 @@ const particles = Array.from({ length: 42 }, (_, i) => {
   };
 });
 
-function KonpeitoBurst({ x, y }) {
+// Lanternas acesas subindo pelo céu.
+export function Lanterns() {
+  return (
+    <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+      {lanterns.map((lantern, i) => (
+        <span
+          key={i}
+          className="lantern"
+          style={{
+            left: lantern.left,
+            '--s': `${lantern.size}px`,
+            '--dur': lantern.dur,
+            '--delay': lantern.delay,
+            '--sway': lantern.sway,
+          }}
+        />
+      ))}
+    </div>
+  );
+}
+
+export function KonpeitoBurst({ x, y }) {
   return particles.map((p, i) => (
     <motion.div
       key={i}
@@ -79,21 +100,7 @@ export default function Celebration({ celebration, certificate, couple, accepted
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
-      <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
-        {lanterns.map((lantern, i) => (
-          <span
-            key={i}
-            className="lantern"
-            style={{
-              left: lantern.left,
-              '--s': `${lantern.size}px`,
-              '--dur': lantern.dur,
-              '--delay': lantern.delay,
-              '--sway': lantern.sway,
-            }}
-          />
-        ))}
-      </div>
+      <Lanterns />
 
       <div
         className="absolute inset-x-0 flex flex-col items-center px-5 text-center"

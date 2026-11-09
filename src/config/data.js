@@ -204,6 +204,124 @@ export const siteData = {
     },
   },
 
+  // Página de 1 ano de namoro: /1ano
+  anniversary: {
+    intro: {
+      eyebrow: '08.11.2025 — 08.11.2026',
+      title: 'Um ano, Gica.',
+      subtitle: 'Nesse tempo a Terra deu uma volta inteira no Sol. Vem dar essa volta comigo de novo?',
+      startLabel: 'Dar a volta',
+    },
+
+    // season: spring, summer, autumn, winter ou bloom (a primavera de volta).
+    // progress: onde a gente está na volta ao sol (0 = 08/11/2025, 1 = 08/11/2026).
+    chapters: [
+      {
+        season: 'spring',
+        label: 'Primavera',
+        months: 'Novembro · Dezembro de 2025',
+        title: 'Onde tudo começou',
+        image: 'images/foto-01.jpeg',
+        text: 'Era primavera quando a nossa história começou. 08 de novembro: o dia em que tudo ganhou mais cor, e eu ganhei você.',
+        progress: 0.12,
+      },
+      {
+        season: 'summer',
+        label: 'Verão',
+        months: 'Dezembro · Março',
+        title: 'Dias de sol',
+        image: 'images/foto-06.jpeg',
+        text: 'Veio o verão, com praia, sol, areia no pé e a gente rindo de tudo. Descobri que qualquer lugar vira paraíso com você do lado.',
+        progress: 0.37,
+      },
+      {
+        season: 'autumn',
+        label: 'Outono',
+        months: 'Março · Junho',
+        title: 'Noites e caretas',
+        image: 'images/foto-08.jpeg',
+        text: 'No outono vieram as noites longas, os rolês, as fotos tortas e as caretas. As folhas caíam e a gente só ficava mais junto.',
+        progress: 0.62,
+      },
+      {
+        season: 'winter',
+        label: 'Inverno',
+        months: 'Junho · Setembro',
+        title: 'Nosso primeiro Dia dos Namorados',
+        image: 'images/foto-02.jpeg',
+        text: 'O inverno trouxe frio, cobertor e o nosso primeiro Dia dos Namorados. Até o frio ficava quentinho do seu lado.',
+        progress: 0.87,
+      },
+      {
+        season: 'bloom',
+        label: 'Primavera de novo',
+        months: 'Setembro · Novembro de 2026',
+        title: 'A volta completa',
+        image: 'images/foto-12.jpeg',
+        text: 'E a primavera voltou: o seu aniversário, as nossas viagens, o pedido oficial... até chegar aqui, em mais um 08 de novembro.',
+        progress: 0.97,
+      },
+    ],
+
+    counter: {
+      eyebrow: 'Uma volta inteira ao sol',
+      title: 'Nosso primeiro ano',
+      // {photos} vira o número de fotos da galeria.
+      facts: [
+        { value: '4', label: 'estações' },
+        { value: '{photos}', label: 'fotos guardadas' },
+        { value: '∞', label: 'eu te amo' },
+      ],
+      nextLabel: 'Mas falta uma coisa...',
+    },
+
+    cake: {
+      title: 'Faz um pedido',
+      hint: 'e assopra a vela',
+      micLabel: 'Assoprar no microfone',
+      listeningLabel: 'Pode assoprar...',
+      tapHint: 'ou toque na chama',
+    },
+
+    celebration: {
+      title: 'Feliz 1 ano!',
+      subtitle: 'O primeiro de muitos, meu amor.',
+      letterLabel: 'Tenho uma carta pra você',
+    },
+
+    letter: {
+      date: '08 de novembro de 2026',
+      greeting: 'Minha Gica,',
+      paragraphs: [
+        'Hoje faz um ano. Trezentos e sessenta e cinco dias desde aquele 08 de novembro em que a minha vida ganhou o seu nome. A Terra deu uma volta inteira no Sol, e eu passei cada pedacinho dessa volta do seu lado.',
+        'Teve primavera, teve verão de praia, teve outono de noites longas e caretas, teve inverno de cobertor e o nosso primeiro Dia dos Namorados. E a primavera voltou, com o seu aniversário e o pedido oficial. Em todas as estações, o meu lugar favorito continuou o mesmo: você.',
+        'Obrigado por cuidar de mim, por rir das minhas bobeiras, por me deixar ser eu mesmo e por escolher a gente todos os dias. Você deixou tudo mais leve, mais bonito e mais nosso.',
+        'Se a nossa história fosse um filme do Studio Ghibli, esse seria só o fim do primeiro ato. O melhor ainda vem: mais viagens, mais praia, mais fotos tortas e mais "eu te amo" do que cabe numa vida.',
+        'Feliz um ano, meu amor. Que venham todas as próximas voltas ao sol, e que eu esteja do seu lado em cada uma delas.',
+      ],
+      signature: 'Com todo o meu amor, Enrique',
+    },
+
+    ending: {
+      title: 'Que venham todas as próximas voltas ao sol.',
+      replayLabel: 'Dar a volta de novo',
+      homeLabel: 'Nosso cantinho',
+    },
+
+    // Imagens para o story do Instagram: /1ano/?story=1 e /1ano/?story=2
+    story: {
+      eyebrow: '08.11.2025 — 08.11.2026',
+      title: '1 ano',
+      subtitle: 'de nós dois',
+      line: '365 dias · 4 estações · 1 volta inteira ao sol',
+      footer: 'Neri & Gica',
+      photos: ['images/foto-13.jpeg', 'images/foto-06.jpeg', 'images/foto-11.jpeg', 'images/foto-01.jpeg'],
+      nightTitle: '365 dias',
+      nightSubtitle: 'e eu escolheria você em todos eles',
+      nightPhoto: 'images/foto-13.jpeg',
+    },
+  },
+
   music: {
     title: 'Nossa música',
     artist: 'Neri e Gica',

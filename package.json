@@ -8,7 +8,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "video": "node scripts/gravar-video.mjs"
+    "video": "node scripts/gravar-video.mjs",
+    "story": "node scripts/gerar-story.mjs"
   },
   "dependencies": {
     "framer-motion": "^12.40.0",

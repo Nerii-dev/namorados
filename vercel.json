@@ -1,3 +1,14 @@
 {
-  "redirects": [{ "source": "/pedido", "destination": "/pedido/", "permanent": false }]
+  "redirects": [
+    {
+      "source": "/pedido",
+      "destination": "/pedido/",
+      "permanent": false
+    },
+    {
+      "source": "/1ano",
+      "destination": "/1ano/",
+      "permanent": false
+    }
+  ]
 }

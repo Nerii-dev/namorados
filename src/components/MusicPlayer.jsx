@@ -38,6 +38,18 @@ export default function MusicPlayer({ music }) {
     }
   }, [volume]);
 
+  // Outras partes do site podem abaixar a música por um tempo (volume null = volta ao normal).
+  useEffect(() => {
+    const handleVolume = (event) => {
+      if (!audioRef.current) return;
+      const override = event.detail?.volume;
+      audioRef.current.volume = typeof override === 'number' ? override : volume;
+    };
+
+    window.addEventListener('neriegica:music-volume', handleVolume);
+    return () => window.removeEventListener('neriegica:music-volume', handleVolume);
+  }, [volume]);
+
   const playLocalAudio = useCallback(async ({ reveal = true } = {}) => {
     const audio = audioRef.current;
 

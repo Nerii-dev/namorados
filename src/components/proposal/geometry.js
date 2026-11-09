@@ -37,6 +37,28 @@ export function heartPoints(cx, top, size) {
   });
 }
 
+// `count` pontos igualmente espaçados pelo contorno do coração (por comprimento, não por ângulo),
+// para fotos ou estrelas não se amontoarem no vinco de cima.
+export function heartOutline(count, cx, top, size) {
+  const scale = size / 32;
+  const samples = Array.from({ length: 721 }, (_, i) => heartPoint((i / 720) * Math.PI * 2));
+  const lengths = [0];
+  for (let i = 1; i < samples.length; i += 1) {
+    lengths.push(lengths[i - 1] + Math.hypot(samples[i].x - samples[i - 1].x, samples[i].y - samples[i - 1].y));
+  }
+  const total = lengths.at(-1);
+
+  let j = 0;
+  return Array.from({ length: count }, (_, k) => {
+    const target = ((k + 0.5) / count) * total;
+    while (lengths[j + 1] < target) j += 1;
+    const t = (target - lengths[j]) / (lengths[j + 1] - lengths[j]);
+    const x = samples[j].x + (samples[j + 1].x - samples[j].x) * t;
+    const y = samples[j].y + (samples[j + 1].y - samples[j].y) * t;
+    return { x: cx + x * scale, y: top + (y + 11.12) * scale };
+  });
+}
+
 export function getLayout(w, h, spriteCount) {
   const size = Math.min(w * 0.72, h * 0.4);
   const top = h * 0.07;

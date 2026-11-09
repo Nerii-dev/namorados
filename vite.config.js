@@ -10,6 +10,7 @@ export default defineConfig({
       input: {
         main: fileURLToPath(new URL('./index.html', import.meta.url)),
         pedido: fileURLToPath(new URL('./pedido/index.html', import.meta.url)),
+        umAno: fileURLToPath(new URL('./1ano/index.html', import.meta.url)),
       },
     },
   },

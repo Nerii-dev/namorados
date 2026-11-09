@@ -98,7 +98,32 @@ export function SootSprite({ candy }) {
   );
 }
 
-function Cloud({ w, flip }) {
+// Filtros e gradientes usados pelas nuvens. Renderize uma vez por página.
+export function CloudDefs() {
+  return (
+    <svg width="0" height="0" className="absolute">
+      <defs>
+        <filter id="cloud-fluff" x="-20%" y="-20%" width="140%" height="140%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="3" seed="7" />
+          <feDisplacementMap in="SourceGraphic" scale="9" result="fluffed" />
+          <feGaussianBlur in="fluffed" stdDeviation="0.7" />
+        </filter>
+        <radialGradient id="cloud-lobe" cx="0.42" cy="0.3" r="0.72">
+          <stop offset="0" stopColor="#ffffff" />
+          <stop offset="0.55" stopColor="#fbfdff" />
+          <stop offset="0.8" stopColor="#e2edf7" />
+          <stop offset="1" stopColor="#b7cde3" />
+        </radialGradient>
+        <linearGradient id="cloud-base" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor="#dbe8f3" />
+          <stop offset="1" stopColor="#b3cae1" />
+        </linearGradient>
+      </defs>
+    </svg>
+  );
+}
+
+export function Cloud({ w, flip }) {
   return (
     <svg
       viewBox="0 0 440 240"
@@ -129,25 +154,7 @@ export function GhibliScene({ time = 'day', celebrate = false, hideSoot = false 
       className={`absolute inset-0 overflow-hidden ${celebrate ? 'scene-celebrate' : ''}`}
       aria-hidden="true"
     >
-      <svg width="0" height="0" className="absolute">
-        <defs>
-          <filter id="cloud-fluff" x="-20%" y="-20%" width="140%" height="140%">
-            <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="3" seed="7" />
-            <feDisplacementMap in="SourceGraphic" scale="9" result="fluffed" />
-            <feGaussianBlur in="fluffed" stdDeviation="0.7" />
-          </filter>
-          <radialGradient id="cloud-lobe" cx="0.42" cy="0.3" r="0.72">
-            <stop offset="0" stopColor="#ffffff" />
-            <stop offset="0.55" stopColor="#fbfdff" />
-            <stop offset="0.8" stopColor="#e2edf7" />
-            <stop offset="1" stopColor="#b7cde3" />
-          </radialGradient>
-          <linearGradient id="cloud-base" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stopColor="#dbe8f3" />
-            <stop offset="1" stopColor="#b3cae1" />
-          </linearGradient>
-        </defs>
-      </svg>
+      <CloudDefs />
 
       <div className="absolute inset-0 bg-[linear-gradient(180deg,#1f8fd0_0%,#3fa9e0_30%,#7fcaee_62%,#cdebf6_86%,#fff1dc_100%)]" />
       <motion.div
